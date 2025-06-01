@@ -145,3 +145,49 @@ int main(){
 
     return 0;
 }
+
+// Punto 3 - como usuario funcion iguales
+
+
+bool iguales(struct nodo *lista1, struct nodo *lista2 )
+{
+
+    int tamanoA = longitud(lista1);
+    int tamanoB = longitud(lista2);
+
+     if (tamanoA != tamanoB) {
+
+        return false; // las listas tienen diferente tamaño
+
+      }
+
+          for (int i = 0; i < tamanoA; i++)
+          {
+                bool iguales = false;
+  
+                 for (int j = 0; j < tamanoB; j++)
+                  {
+
+                     if (primerElemento(lista1) == primerElemento(lista2))
+                       {
+  
+                         iguales = true;
+              
+                        }
+
+
+                  }
+            
+                    if (!iguales)
+                     {
+
+                       return false; // si en una busqueda no se encuentra un elemento igual las listas no son iguales
+
+                     }
+           
+
+          }
+
+          return true; // si se encontro en todos las busquedas elementos iguales las listsa son iguales
+
+}

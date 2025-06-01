@@ -317,58 +317,48 @@ item per;
 }
 
 
-        
-        
+              
 Lista borrarUltimo(Lista L)  // Punto 02-I - Borra el ultimo Nodo de la lista
 
 {  
 
- int tamaño = longitud(L);
 
-
-         if (L == NULL) // si la lista  esta vacia
-          { 
+        if (L == NULL) // si la lista  esta vacia
+            { 
     
-             printf("La lista esta vacia, no se pueden borrar nodos.\n"); //si esta vacia no puedo borrar un nodo
-             return L;
+                printf("La lista esta vacia, no se pueden borrar nodos.\n"); //si esta vacia no puedo borrar un nodo
+                return L;
 
-          } else 
-              { 
-      
-                   if (tamaño = 1 )
-                   {
+             } 
+             
+        if (L->sig == NULL) // si la lista tiene un solo elemento
+            { 
 
-                        nodo *aux = L;
-                        L = L->sig;
-                        delete aux;
-                        return L;
+           delete L;
+           L = NULL;
+           return L;
 
-                   }else 
-                      {
+            }
 
-                              nodo *aux2 = L; //creo un puntero aux del tipo Nodo y lo apunto a la cabecera de mi lista L
+            // buscar el penultimo nodo
 
-                              for (int i = 1; i = tamaño; i++)
-                              {
-                                  aux2 = aux2->sig;
-
-                              }
-              
-                              delete aux2;
-                              return L;
-
-
-                       }
-
+             nodo *aux = L;
             
+        while (aux->sig->sig != NULL) 
+          {
+
+            aux =aux->sig;
+              
+          }
+         
+        // borrar el ultimo nodo
+
+        delete aux->sig;
+        aux->sig = NULL;
+        return L;
 
 
-          
-
-              }
-
-} 
-           
+}
 
 // Punto 3 - como usuario funcion iguales
 
