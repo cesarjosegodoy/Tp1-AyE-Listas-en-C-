@@ -7,7 +7,6 @@
         // Punto 01 - Tipificacion de Lista Enlasada ****31/05/2025****
 
 
-
 typedef int item; // se usara item como sinonimo del tipo de variable int
 const int indefinido = -999999;
 struct nodo {              // Nodo
